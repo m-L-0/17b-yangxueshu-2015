@@ -7,4 +7,4 @@ code中
 - 文件cnn包含读取tf.record格式数据，生成了四层神经网络，并存储，里面含有训练代码（可调用存储的模型继续训练）
 - 没能实现tensorboard可视化，相关代码没有上传
 
-mathematicalFormula_and_algorithm.md文件中包含CNN、KNN、K-means的主要算法和数学公式，数学公式为图片上传
+mathematicalFormula_and_algorithm.md文件中包含CNN、KNN、K-means的主要算法和数学公式，数学公式为图片上传（上传未成功，请参见images文件夹中图片）

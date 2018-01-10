@@ -1,0 +1,12 @@
+{# templates/index.html #}
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h4>您上传的验证码图片为：{% if file_url %}</br><img src='{{ file_url }}'/>{% else %}暂无上传{% endif %}</h4>
+        <h4>验证码识别结果为： {% if file_url %}{{ label }}{% else %}暂无上传{% endif %}</h4>
+    </div>
+    {{ wtf.quick_form(form) }}
+{% endblock %}

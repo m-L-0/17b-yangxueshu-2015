@@ -1,20 +1,16 @@
 import tensorflow as tf
-import os
 import numpy as np
 from PIL import Image
 import random
 
 
-def recognition():
+def recognition(filename):
     # 定义存储地址与名称
     CNN = '/home/aa/CaptchaRecognition/data/cnn'
-    filepath = 'images/'
-    for name in os.listdir(filepath):
-        filename = filepath + name
-        img = Image.open(filename)
-        img1 = img.resize((56, 40))
-        image1 = np.array(img1.convert("L"))/255
-        image = np.reshape(image1, [2240])   
+    img = Image.open('images/'+filename)
+    img1 = img.resize((56, 40))
+    image1 = np.array(img1.convert("L"))/255
+    image = np.reshape(image1, [2240])   
         
     # 卷积神经网络（有正则化的添加与使用）
     def weight_variable(shape):

@@ -201,12 +201,7 @@ def recognition(filename):
                 y_l.append(i)
         for i in range(len(y_l)):
             num += y_l[-1*(i+1)]*(10**i)
-        with open('pre_l.txt',  'w+') as f:
-            f.write("%d" % num + "\n")
 
         coord.request_stop()
         coord.join(threads)
-            
-
-if __name__ == '__main__':
-    recognition()
+    return num

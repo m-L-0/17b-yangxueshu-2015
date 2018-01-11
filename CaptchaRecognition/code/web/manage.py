@@ -29,17 +29,14 @@ def upload_file():
     if form.validate_on_submit():
         filename = secure_filename(form.photo.data.filename)
         form.photo.data.save(os.path.join(app.config['UPLOADED_PHOTO_DEST'], filename))
-        recognition(filename)
-        with open("pre_l.txt", "r") as f:
-            label = f.readline()
-        os.remove("pre_l.txt")
-        with open("pre_label_list.txt", "a+") as f_w:
-            f_w.write('%s' % label)
+        label = recognition(filename)
+        with open("pre_label_list.txt", "a+") as f:
+            f.write('%s' % label[0] + '\n')
         file_url = filename
     else:
         file_url = None
         label = None
-    return render_template('index.html', form=form, file_url=file_url, label=label)
+    return render_template('index.html', form=form, file_url=file_url, label=label[0])
 
 
 @app.route('/uploads/<filename>')

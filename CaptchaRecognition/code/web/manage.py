@@ -35,7 +35,7 @@ def upload_file():
         file_url = filename
     else:
         file_url = None
-        label = None
+        label = [None]
     return render_template('index.html', form=form, file_url=file_url, label=label[0])
 
 
